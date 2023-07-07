@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Table</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="heading">
+        <h1>COLLEGE DATA</h1>
+    </div>
+    <div class="dropdowns">
+        
+        <select name="gender" id="gender">
+            <option value="" selected >--Select Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <select name="department" id="department" multiple>
+            <option value="" selected>--Select Department--</option>
+            <option value="Computer">Computer</option>
+            <option value="Automobile">Automobile</option>
+            <option value="Civil">Civil</option>
+        </select>
+
+        <select name="currentyear" id="currentyear" multiple>
+            <option value="" selected>--Current Year--</option>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+            <option value="Fourth">Fourth</option>
+            <option value="Pass Out">Pass Out</option>
+        </select>
+
+        <select name="admissionyear" id="admissionyear" multiple>
+            <option value="" selected>--Admission Year--</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+        </select>
+
+       <label for="merit" style="margin-left: 40px;"> Merit: </label><input type="number" name="merit" id="merit" max="100" min="0" style="font-size: 18px; width: 100px;">
+
+        <select name="setmerit" id="setmerit" style="margin-left: 5px;">
+            <option value="" selected>--Select Merit--</option>
+            <option value="greater">Greater ></option>
+            <option value="less">Less <</option>
+        </select>
+
+        <select name="meritcategory" id="meritcategory" style="margin-left: 5px;">
+            <option value="" selected>--Merit Category--</option>
+            <option value="regular">Regular</option>
+            <option value="d2d">D2D</option>
+        </select>
+
+        <br><br><br>
+        <input type="button" value="FILTER" class="oncbtn" onclick="filterData()">
+        <input type="button" value="Fill Id & Email" class="oncbtn" onclick="fillData()">
+        <input type="button" value="Match Contact" class="oncbtn" onclick="matchContact()">
+        <input type="button" value="Sort Contact" class="oncbtn" onclick="sortContact()">
+
+        <select name="sortmerit" id="sortmerit" style="margin-left: 30px;" onchange="filterData()">
+            <option value="" selected>--Sort Merit--</option>
+            <option value="ascending">Ascending </option>
+            <option value="descending">Descending </option>
+        </select>
+
+        <input type="button" value="RESET ALL" class="oncbtn" onclick="resetData()">
+
+        <select name="downloadformat" id="downloadformat" style="margin-left: 30px;">
+            <option value="" selected>--Download Format--</option>
+            <option value="xls">XLS </option>
+            <option value="csv">CSV</option>
+        </select>
+        <input type="button" value="DOWNLOAD!" class="oncbtn dwnldbtn" onclick="downloadFile()">
+
+    </div>
+    <div class="datatable">
+        <table border="" id="collegedata">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Gender</th>
+                    <th>Ad Year</th>
+                    <th>Merit</th>
+                    <th>Ad Cat</th>
+                    <th>Collage</th>
+                    <th>Department</th>
+                    <th>Dep Head</th>
+                    <th>Year Head</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- js link -->
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
